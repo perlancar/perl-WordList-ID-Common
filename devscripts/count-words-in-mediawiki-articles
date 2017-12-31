@@ -1,0 +1,29 @@
+#!/usr/bin/env perl
+
+use 5.010001;
+use strict;
+use warnings;
+use Log::ger;
+
+undef $/;
+
+my %freq;
+while (defined(my $article = <>)) {
+    #log_debug "D: article=<<$article>>";
+
+    $article =~ s/(\{\{(?:[^{}]++|(?1))*\}\})//gs; # remove template calls?
+    $article =~ s/\{\|.+?\|\}//gs; # remove tables
+    $article =~ s/\[\[.+?\]\]//g;  # remove links for now
+    $article =~ s!</?(\w+)[^>]*>!!gs;
+    $article =~ s!&\w+;!!gs;
+
+    log_debug "D: article=<<$article>>";
+
+    while ($article =~ /\b([A-Za-z][a-z]+)\b/g) {
+        $freq{$1}++;
+    }
+}
+
+for (sort {$freq{$b} <=> $freq{$a}} keys %freq) {
+    print "$_\t$freq{$_}\n";
+}

@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+
+use 5.010001;
+use strict;
+use warnings;
+
+my %freq;
+
+while (<>) {
+    chomp;
+    my ($word, $freq) = split /\t+/, $_;
+    $freq{$word} += $freq;
+}
+
+for (sort {$freq{$b} <=> $freq{$a}} keys %freq) {
+    print "$_\t$freq{$_}\n";
+}

@@ -1,0 +1,87 @@
+#!/usr/bin/env perl
+
+# wikipedia lets us download all articles, e.g. for indonesia:
+# idwiki-latest-pages-articles.xml.bz2. this is a single giant xml document
+# (2.1G uncompressed on 2017-12-30). i want to extract the common Indonesian
+# words, but processing this single big file in one go seems rather unwieldy. so
+# i thought i'll extract the pages into separate files first.
+
+use 5.010001;
+use strict;
+use warnings;
+
+use Progress::Any '$progress';
+use Progress::Any::Output 'TermProgressBarColor';
+
+unless (@ARGV == 1) {
+    die "Usage: $0 <articles.xml location>";
+}
+
+open my $fh, "<", $ARGV[0] or die "Can't open '$ARGV[0]': $!";
+$progress->target(-s $fh);
+
+my $filename;
+my $in_page;
+my $in_text;
+my $fh_page;
+
+while (defined(my $line = <$fh>)) {
+    if (!$in_page) {
+        if ($line =~ /^\s+<page>$/) {
+            $in_page = 1;
+            next;
+        } else {
+            next;
+        }
+    }
+
+    if (!$in_text) {
+        if ($line =~ m!^\s+<title>(.+)</title>$!) {
+            my $title = $1;
+            (my $filename = lc $title) =~ s/[^a-z0-9]+/_/g;
+            my ($first, $second) = $filename =~ /(.)(.?)/;
+            $second = "_" if !length $second;
+            unless (-d $first) {
+                mkdir $first, 0755 or die "Can't mkdir '$first': $!";
+            }
+            unless (-d "$first/$first$second") {
+                mkdir "$first/$first$second", 0755
+                    or die "Can't mkdir '$first/$first$second': $!";
+            }
+            my $path0 = "$first/$first$second/$filename";
+            my $counter = 0;
+            my $path;
+            while (1) {
+                $path = $path0 . ($counter++ ? ".$counter" : "");
+                if (-f $path) {
+                    next;
+                } else {
+                    last;
+                }
+            }
+            open $fh_page, ">", $path or die "Can't write to '$path': $!";
+            $progress->update(
+                pos => (tell $fh),
+                message => "Opening '$path'",
+            );
+            next;
+        } elsif ($line =~ m!^\s+</page>$!) {
+            $in_page = 0;
+            next;
+        } elsif ($line =~ m!^\s+<text xml:space="preserve">!) {
+            $in_text = 1;
+        } else {
+            next;
+        }
+    }
+
+    # in text
+    {
+        print $fh_page $line;
+        if ($line =~ m!</text>$!) {
+            $in_text = 0;
+        }
+    }
+}
+
+$progress->finish;
