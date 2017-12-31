@@ -9,11 +9,11 @@ our @ISA = qw(WordList);
 # STATS
 
 1;
-# ABSTRACT: Top 1000 words from Wikipedia Indonesia pages
+# ABSTRACT: Top 5000 words from Wikipedia Indonesia pages
 
 =head1 DESCRIPTION
 
-This module contains 1000 most frequently used Indonesian words in Wikipedia
+This module contains 5000 most frequently used Indonesian words in Wikipedia
 Indonesian pages.
 
 Here's how the list is produced: First the Wikipedia Indonesia's XML.bz2 [1] was
