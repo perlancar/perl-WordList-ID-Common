@@ -41,7 +41,6 @@ C<work/> directories in the Git repository.
 =cut
 
 __DATA__
-Islam
 abad
 abadi
 abjad
@@ -4729,6 +4728,7 @@ terdapat
 terdekat
 terdengar
 terdiri
+tereliminasi
 terendah
 tergabung
 terganggu
