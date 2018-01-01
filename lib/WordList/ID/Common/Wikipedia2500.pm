@@ -444,6 +444,7 @@ dekat
 delapan
 demi
 demikian
+demokrasi
 dengan
 dengannya
 depan
@@ -1987,7 +1988,6 @@ protein
 protes
 provinsi
 proyek
-public
 publik
 puisi
 pukul
@@ -2215,7 +2215,6 @@ setiap
 setidaknya
 setuju
 sewaktu
-shift
 si
 siang
 siap
@@ -2506,6 +2505,7 @@ utusan
 varian
 variasi
 versi
+vertikal
 via
 video
 virus

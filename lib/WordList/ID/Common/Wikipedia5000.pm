@@ -137,7 +137,6 @@ anaknya
 analisis
 analog
 ancaman
-ancient
 anda
 andalan
 aneh
@@ -372,6 +371,7 @@ bepergian
 berabad
 beracun
 berada
+beradaptasi
 berafiliasi
 beragam
 beragama
@@ -732,6 +732,7 @@ caranya
 cari
 cat
 catatan
+catur
 cedera
 celah
 celana
@@ -834,6 +835,7 @@ depannya
 departemen
 depresi
 derajat
+deret
 desa
 desain
 desainer
@@ -1222,6 +1224,7 @@ ditempatkan
 ditempuh
 ditemui
 ditemukan
+ditemukannya
 ditentang
 ditentukan
 diterapkan
@@ -1386,7 +1389,6 @@ fisika
 fisikawan
 fitur
 fleksibel
-flight
 fokus
 form
 formal
@@ -1472,7 +1474,6 @@ gubernur
 gudang
 gugur
 gugus
-guitar
 gula
 gulungan
 guna
@@ -1554,7 +1555,6 @@ hormat
 hormon
 horor
 hotel
-however
 hubungan
 hubungannya
 hujan
@@ -2054,6 +2054,7 @@ ketentuan
 keterampilan
 keterangan
 keterbatasan
+ketergantungan
 keterlibatan
 ketertarikan
 ketiga
@@ -2183,6 +2184,7 @@ koordinat
 kopi
 koran
 korban
+koridor
 korupsi
 kosakata
 kosong
@@ -2724,6 +2726,7 @@ mendadak
 mendaftar
 mendaftarkan
 mendalam
+mendalami
 mendampingi
 mendapat
 mendapati
@@ -2745,6 +2748,7 @@ mendeteksi
 mendiami
 mendidik
 mendirikan
+mendistribusikan
 mendominasi
 mendorong
 menduduki
@@ -3331,7 +3335,6 @@ paroki
 partai
 partikel
 partisipasi
-party
 paru
 paruh
 pas
@@ -3884,7 +3887,6 @@ plasma
 plastik
 plat
 platform
-play
 plot
 plus
 pohon
@@ -3925,6 +3927,7 @@ prasarana
 prasasti
 predator
 predikat
+presentasi
 presenter
 presiden
 prestasi
@@ -3938,7 +3941,6 @@ prinsip
 prioritas
 pro
 problem
-producer
 produk
 produksi
 produksinya
@@ -3969,7 +3971,6 @@ psikologi
 psikologis
 puas
 puasa
-public
 publik
 publikasi
 pucat
@@ -4416,7 +4417,6 @@ setuju
 seumur
 sewa
 sewaktu
-shift
 si
 sia
 siang
@@ -4448,6 +4448,7 @@ singgah
 singkat
 singkatan
 sini
+sinilah
 sintesis
 sinyal
 sipil
@@ -4992,7 +4993,6 @@ virus
 visi
 visual
 vitamin
-vocal
 vokal
 vokalis
 volume
