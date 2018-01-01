@@ -1,0 +1,3 @@
+#!/bin/bash
+
+perl -lne'last if /#/; s/\t.*//; print' devdata/words-curated.txt | head -n5000 | LANG=C sort
